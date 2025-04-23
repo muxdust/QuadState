@@ -4,7 +4,14 @@ import { ArrowRight, MapPin } from "lucide-react";
 const PlaceCard = ({ place }) => {
   return (
     <div className="flex flex-col w-full h-full bg-white shadow-lg rounded-lg overflow-hidden relative">
-      <img src={place.coverImage} alt="" className="w-full h-40 object-cover" />
+      <div className="w-full h-44 overflow-hidden">
+        <img
+          src={place.coverImage}
+          alt=""
+          className="w-full h-full object-cover hover:scale-110 transition duration-300 ease-in-out"
+          loading="lazy"
+        />
+      </div>
       <div className="flex flex-col justify-between flex-1 w-full p-5 gap-3">
         <div className="flex flex-col gap-2">
           <div className="flex justify-between items-center w-full">

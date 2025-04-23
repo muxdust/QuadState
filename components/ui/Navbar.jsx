@@ -55,7 +55,7 @@ const Navbar = () => {
           </button>
         </div>
         {isOpen && (
-          <div className="flex flex-col items-center mt-5 lg:hidden">
+          <div className="flex flex-col items-center mt-5 lg:hidden w-full">
             <ul className="flex flex-col justify-center items-center gap-5">
               {menuItems.map((item) => (
                 <li key={item.name}>
@@ -68,11 +68,11 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <div className="flex flex-col items-center gap-5 mt-5">
-              <button className="px-4 py-2 text-sm font-medium text-rose-500 bg-white rounded-md hover:bg-rose-600 hover:text-white border border-rose-600 transition duration-300 cursor-pointer">
+            <div className="flex flex-col items-center gap-5 mt-5 w-full md:w-auto">
+              <button className="px-4 py-2 text-sm font-medium text-rose-500 bg-white rounded-md hover:bg-rose-600 hover:text-white border border-rose-600 transition duration-300 cursor-pointer w-full">
                 Sign In
               </button>
-              <button className="px-4 py-2 text-sm font-medium text-white bg-rose-500 rounded-md hover:bg-rose-600 transition duration-300 cursor-pointer">
+              <button className="px-4 py-2 text-sm font-medium text-white bg-rose-500 rounded-md hover:bg-rose-600 transition duration-300 cursor-pointer w-full">
                 Sign Up
               </button>
             </div>
