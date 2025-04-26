@@ -6,6 +6,7 @@ import Link from "next/link";
 const menuItems = [
   { name: "Home", path: "/" },
   { name: "Properties", path: "/properties" },
+  { name: "LuxeAi", path: "/luxeai" },
   { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
 ];
@@ -40,12 +41,18 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="hidden lg:flex items-center gap-5">
-            <button className="px-4 py-2 text-sm font-medium text-rose-500 bg-white rounded-md hover:bg-rose-600 hover:text-white border border-rose-600 transition duration-300 cursor-pointer">
+            <Link
+              href={"/auth/sign-in"}
+              className="px-4 py-2 text-sm font-medium text-rose-500 bg-white rounded-md hover:bg-rose-600 hover:text-white border border-rose-600 transition duration-300 cursor-pointer"
+            >
               Sign In
-            </button>
-            <button className="px-4 py-2 text-sm font-medium text-white bg-rose-500 rounded-md hover:bg-rose-600 transition duration-300 cursor-pointer">
+            </Link>
+            <Link
+              href={"/auth/sign-up"}
+              className="px-4 py-2 text-sm font-medium text-white bg-rose-500 rounded-md hover:bg-rose-600 transition duration-300 cursor-pointer"
+            >
               Sign Up
-            </button>
+            </Link>
           </div>
           <button
             className="lg:hidden cursor-pointer text-zinc-800"
@@ -69,12 +76,18 @@ const Navbar = () => {
               ))}
             </ul>
             <div className="flex flex-col items-center gap-5 mt-5 w-full md:w-auto">
-              <button className="px-4 py-2 text-sm font-medium text-rose-500 bg-white rounded-md hover:bg-rose-600 hover:text-white border border-rose-600 transition duration-300 cursor-pointer w-full">
+              <Link
+                href={"/auth/sign-in"}
+                className="px-4 py-2 text-sm font-medium text-rose-500 bg-white rounded-md hover:bg-rose-600 hover:text-white border border-rose-600 transition duration-300 cursor-pointer w-full text-center"
+              >
                 Sign In
-              </button>
-              <button className="px-4 py-2 text-sm font-medium text-white bg-rose-500 rounded-md hover:bg-rose-600 transition duration-300 cursor-pointer w-full">
+              </Link>
+              <Link
+                href={"/auth/sign-up"}
+                className="px-4 py-2 text-sm font-medium text-white bg-rose-500 rounded-md hover:bg-rose-600 transition duration-300 cursor-pointer w-full text-center"
+              >
                 Sign Up
-              </button>
+              </Link>
             </div>
           </div>
         )}

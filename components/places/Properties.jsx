@@ -1,0 +1,66 @@
+"use client";
+import React, { useState, useEffect } from "react";
+import PlaceCard from "../ui/PlaceCard";
+import { useQuery } from "@tanstack/react-query";
+import { ArrowRight } from "lucide-react";
+
+const Properties = () => {
+  const [places, setPlaces] = useState([]);
+
+  const fetchPlaces = async () => {
+    const response = await fetch("/api/fetch/getall");
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  };
+
+  const { data, isLoading, error } = useQuery("places", fetchPlaces);
+
+  useEffect(() => {
+    if (data) {
+      setPlaces(data);
+    }
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        Loading...
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex justify-center items-center min-h-screen text-red-500">
+        Error loading properties.
+      </div>
+    );
+  }
+
+  return (
+    <section className="flex justify-center items-center w-full min-h-screen py-14">
+      <div className="flex flex-col items-center justify-center w-full lg:container px-5">
+        <h2 className="text-3xl font-semibold text-center font-heading">
+          Explore Listings
+        </h2>
+        <p className="text-md font-normal text-zinc-800 text-center mt-3">
+          Discover our handpicked selection of exceptional properties that
+          exemplify luxury living at its finest.
+        </p>
+        <div className="mt-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-start items-stretch w-full gap-5">
+          {places.map((place, index) => (
+            <PlaceCard key={index} place={place} />
+          ))}
+        </div>
+        <button className="mt-10 px-6 py-3 text-md font-medium text-white bg-rose-500 rounded-md hover:bg-rose-600 transition duration-300 cursor-pointer flex items-center gap-1">
+          View All Listings
+          <ArrowRight className="inline-block" size={22} />
+        </button>
+      </div>
+    </section>
+  );
+};
+
+export default Properties;
