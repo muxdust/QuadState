@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../lib/generated/prisma"
 }
 
 datasource db {
@@ -38,7 +37,7 @@ model Property {
   features      String[]
   price         String
   coverImage    String
-  otherImages   String
+  otherImages   String[]
   location      String
   propertyArea  String
   totalFloors   Int
