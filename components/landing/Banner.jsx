@@ -9,12 +9,12 @@ const Banner = () => {
           Wants to predict your property value?
         </h2>
         <p className="text-md font-normal text-white text-center max-w-2xl">
-          Luxe Ai is here to help you with that. Our advanced AI technology
+          LuxeAi is here to help you with that. Our advanced AI technology
           provides accurate property valuations and insights to help you make
           informed decisions.
         </p>
         <button className="px-6 py-3 text-md font-medium text-rose-600 bg-white rounded-md hover:bg-zinc-200 transition duration-300 cursor-pointer flex items-center gap-1">
-          Try Luxe Ai
+          Try LuxeAi
           <Bot className="inline-block" size={20} />
         </button>
       </div>

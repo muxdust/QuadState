@@ -26,14 +26,14 @@ const Navbar = () => {
             href="/"
             className="text-2xl font-semibold font-heading text-rose-600"
           >
-            LuxeEstate
+            LuxEstate
           </Link>
           <ul className="gap-5 hidden lg:flex items-center">
             {menuItems.map((item) => (
               <li key={item.name}>
                 <Link
                   href={item.path}
-                  className="text-md font-normal text-zinc-800 hover:text-rose-600 transition duration-300 cursor-pointer"
+                  className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
                 >
                   {item.name}
                 </Link>
@@ -68,7 +68,7 @@ const Navbar = () => {
                 <li key={item.name}>
                   <Link
                     href={item.path}
-                    className="text-md font-normal text-zinc-800 hover:text-rose-600 transition duration-300 cursor-pointer"
+                    className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
                   >
                     {item.name}
                   </Link>

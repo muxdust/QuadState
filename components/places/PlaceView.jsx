@@ -70,14 +70,14 @@ const PlaceView = () => {
             <h3 className="text-xl font-semibold text-zinc-700 flex items-center gap-2">
               <Home size={20} /> Property Details
             </h3>
-            <p className="text-md text-zinc-800">{place.description}</p>
-            <p className="text-md text-zinc-800">Location: {place.location}</p>
-            <p className="text-md text-zinc-800">Price: {place.price}</p>
-            <p className="text-md text-zinc-800">Area: {place.propertyArea}</p>
-            <p className="text-md text-zinc-800">
+            <p className="text-md text-zinc-700">{place.description}</p>
+            <p className="text-md text-zinc-700">Location: {place.location}</p>
+            <p className="text-md text-zinc-700">Price: {place.price}</p>
+            <p className="text-md text-zinc-700">Area: {place.propertyArea}</p>
+            <p className="text-md text-zinc-700">
               Built Year: {place.builtYear}
             </p>
-            <p className="text-md text-zinc-800">
+            <p className="text-md text-zinc-700">
               Parking: {place.parkingAvailable ? "Available" : "Not Available"}
             </p>
           </div>
@@ -88,7 +88,7 @@ const PlaceView = () => {
             </h3>
             <ul className="list-disc list-inside flex flex-col gap-1">
               {place.features.map((feature, index) => (
-                <li key={index} className="text-md text-zinc-800">
+                <li key={index} className="text-md text-zinc-700">
                   {feature}
                 </li>
               ))}
@@ -99,9 +99,9 @@ const PlaceView = () => {
             <h3 className="text-xl font-semibold text-zinc-700 flex items-center gap-2">
               <User size={20} /> Owner Information
             </h3>
-            <p className="text-md text-zinc-800">Name: {place.ownerName}</p>
-            <p className="text-md text-zinc-800">Phone: {place.ownerPhone}</p>
-            <p className="text-md text-zinc-800">Email: {place.ownerEmail}</p>
+            <p className="text-md text-zinc-700">Name: {place.ownerName}</p>
+            <p className="text-md text-zinc-700">Phone: {place.ownerPhone}</p>
+            <p className="text-md text-zinc-700">Email: {place.ownerEmail}</p>
           </div>
         </div>
       </div>

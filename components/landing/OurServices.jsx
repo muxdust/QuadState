@@ -26,7 +26,7 @@ const OurServices = () => {
         <h2 className="text-3xl font-semibold text-center font-heading">
           Our Services
         </h2>
-        <p className="text-md font-normal text-zinc-800 text-center mt-3">
+        <p className="text-md font-normal text-zinc-700 text-center mt-3">
           We provide comprehensive real estate services to help you find,
           purchase, or sell your dream property.
         </p>
@@ -42,7 +42,7 @@ const OurServices = () => {
               <h3 className="text-xl font-semibold font-heading text-zinc-900">
                 {service.name}
               </h3>
-              <p className="text-md font-normal text-zinc-800">
+              <p className="text-md font-normal text-zinc-700">
                 {service.desc}
               </p>
             </div>

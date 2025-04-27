@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
 import Alert from "../ui/Alert";
 
-const imagepath = "/assets/sign-in.avif";
+const imagepath = "/assets/sign-in.webp";
 
 const SignInForm = () => {
   const router = useRouter();
@@ -83,9 +83,9 @@ const SignInForm = () => {
           className="flex flex-col justify-center items-center w-full h-full px-5 py-20 max-w-2xl mx-auto"
         >
           <h2 className="text-3xl font-semibold font-heading text-rose-600 text-center">
-            Sign In to LuxeEstate
+            Sign In to LuxEstate
           </h2>
-          <p className="text-md font-normal text-zinc-800 text-center mt-2">
+          <p className="text-md font-normal text-zinc-700 text-center mt-2">
             Please enter your credentials to access your account
           </p>
 
@@ -132,7 +132,7 @@ const SignInForm = () => {
             {isPending ? "Signing In..." : "Sign In"}
           </button>
 
-          <p className="text-md font-normal text-zinc-800 mt-5">
+          <p className="text-md font-normal text-zinc-700 mt-5">
             Don't have an account?{" "}
             <Link
               href="/auth/sign-up"

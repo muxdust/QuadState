@@ -7,9 +7,9 @@ const Footer = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-full px-5 lg:container justify-center items-stretch">
         <div className="flex flex-col gap-3 justify-start items-start w-full">
           <h2 className="text-2xl font-semibold font-heading text-rose-600">
-            LuxeEstate
+            LuxEstate
           </h2>
-          <p className="text-md lg:text-lg font-normal text-zinc-800">
+          <p className="text-md lg:text-lg font-normal text-zinc-700">
             Discover the finest luxury properties with our expert guidance. Your
             dream home awaits.
           </p>
@@ -22,7 +22,7 @@ const Footer = () => {
             <li>
               <Link
                 href="/"
-                className="text-md font-normal text-zinc-800 hover:text-rose-600 transition duration-300 cursor-pointer"
+                className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
               >
                 Home
               </Link>
@@ -30,7 +30,7 @@ const Footer = () => {
             <li>
               <Link
                 href="/properties"
-                className="text-md font-normal text-zinc-800 hover:text-rose-600 transition duration-300 cursor-pointer"
+                className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
               >
                 Properties
               </Link>
@@ -38,7 +38,7 @@ const Footer = () => {
             <li>
               <Link
                 href="/about"
-                className="text-md font-normal text-zinc-800 hover:text-rose-600 transition duration-300 cursor-pointer"
+                className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
               >
                 About Us
               </Link>
@@ -46,7 +46,7 @@ const Footer = () => {
             <li>
               <Link
                 href="/contact"
-                className="text-md font-normal text-zinc-800 hover:text-rose-600 transition duration-300 cursor-pointer"
+                className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
               >
                 Contact Us
               </Link>
@@ -61,7 +61,7 @@ const Footer = () => {
             <li>
               <Link
                 href="#"
-                className="text-md font-normal text-zinc-800 hover:text-rose-600 transition duration-300 cursor-pointer"
+                className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
               >
                 Facebook
               </Link>
@@ -69,7 +69,7 @@ const Footer = () => {
             <li>
               <Link
                 href="#"
-                className="text-md font-normal text-zinc-800 hover:text-rose-600 transition duration-300 cursor-pointer"
+                className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
               >
                 Twitter
               </Link>
@@ -77,7 +77,7 @@ const Footer = () => {
             <li>
               <Link
                 href="#"
-                className="text-md font-normal text-zinc-800 hover:text-rose-600 transition duration-300 cursor-pointer"
+                className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
               >
                 Instagram
               </Link>
@@ -88,12 +88,12 @@ const Footer = () => {
           <h2 className="text-lg font-semibold font-heading text-rose-600">
             Contact Us
           </h2>
-          <p className="text-md font-normal text-zinc-800">
+          <p className="text-md font-normal text-zinc-700">
             123 Luxe St, Beverly Hills, CA 90210
           </p>
-          <p className="text-md font-normal text-zinc-800">+1 (234) 567-890</p>
-          <p className="text-md font-normal text-zinc-800">
-            luxeestate@gmail.com
+          <p className="text-md font-normal text-zinc-700">+1 (234) 567-890</p>
+          <p className="text-md font-normal text-zinc-700">
+            LuxEstate@gmail.com
           </p>
         </div>
       </div>

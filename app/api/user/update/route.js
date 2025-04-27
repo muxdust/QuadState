@@ -7,7 +7,7 @@ export async function PUT(request) {
   try {
     const { email: userEmail } = await getDataFromToken(request);
 
-    const { name, password, profilePicture } = await request.json();
+    const { name, password, profileImage } = await request.json();
 
     const updatedData = {};
 
@@ -18,8 +18,8 @@ export async function PUT(request) {
       const hashedPassword = await bcryptjs.hash(password, 10);
       updatedData.password = hashedPassword;
     }
-    if (profilePicture) {
-      updatedData.profilePicture = profilePicture;
+    if (profileImage) {
+      updatedData.profileImage = profileImage;
     }
 
     await dbClient.user.update({

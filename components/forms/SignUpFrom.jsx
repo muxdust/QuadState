@@ -6,7 +6,7 @@ import { Eye, EyeClosed } from "lucide-react";
 import Link from "next/link";
 import Alert from "../ui/Alert";
 
-const imagepath = "/assets/sign-up.avif";
+const imagepath = "/assets/sign-up.webp";
 
 const SignUpForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -74,9 +74,9 @@ const SignUpForm = () => {
         <div className="flex flex-col justify-center items-center w-full h-full px-5 py-20 max-w-2xl mx-auto relative">
           <form onSubmit={handleSubmit} className="w-full">
             <h2 className="text-3xl font-semibold font-heading text-rose-600 text-center">
-              Sign Up to LuxeEstate
+              Sign Up to LuxEstate
             </h2>
-            <p className="text-md font-normal text-zinc-800 text-center mt-2">
+            <p className="text-md font-normal text-zinc-700 text-center mt-2">
               Create your account to get started
             </p>
             <div className="flex flex-col justify-start items-start w-full gap-2 mt-5">
@@ -160,7 +160,7 @@ const SignUpForm = () => {
             >
               {isPending ? "Signing Up..." : "Sign Up"}
             </button>
-            <p className="text-md font-normal text-zinc-800 mt-5 text-center">
+            <p className="text-md font-normal text-zinc-700 mt-5 text-center">
               Already have an account?{" "}
               <Link
                 href="/auth/sign-in"

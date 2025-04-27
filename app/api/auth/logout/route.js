@@ -7,7 +7,7 @@ export async function POST() {
       { status: 200 }
     );
 
-    response.cookies.set("token", "", { maxAge: 0 });
+    response.cookies.set("auth-token", "", { maxAge: 0 });
 
     return response;
   } catch (error) {

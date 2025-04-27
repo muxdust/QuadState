@@ -12,6 +12,7 @@ model User {
   name      String
   email     String   @unique
   password  String
+  profileImage  String?   @default("https://res-console.cloudinary.com/dj98bhfz1/media_explorer_thumbnails/ae0332e1144843d6f14d82a08c53832b/detailed")
   role      String   @default("user")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

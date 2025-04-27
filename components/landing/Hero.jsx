@@ -1,5 +1,5 @@
 import React from "react";
-const imagepath = "/assets/hero.avif";
+const imagepath = "/assets/hero.webp";
 import { Compass } from "lucide-react";
 
 const Hero = () => {

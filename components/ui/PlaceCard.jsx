@@ -23,14 +23,14 @@ const PlaceCard = ({ place }) => {
               {place.location}
             </p>
           </div>
-          <p className="text-md font-normal text-zinc-800">
+          <p className="text-md font-normal text-zinc-700">
             {place.description}
           </p>
           <ul className="flex flex-wrap gap-2 w-full">
             {place.features.map((feature, index) => (
               <li
                 key={index}
-                className="text-sm font-normal text-zinc-800 py-1 px-2 bg-rose-100 rounded-full"
+                className="text-sm font-normal text-zinc-700 py-1 px-2 bg-rose-100 rounded-full"
               >
                 {feature}
               </li>

@@ -42,7 +42,7 @@ export async function POST(request) {
       { status: 200 }
     );
 
-    response.cookies.set("token", token, {
+    response.cookies.set("auth-token", token, {
       httpOnly: true,
       maxAge: 3600 * 24,
       path: "/",

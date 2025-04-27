@@ -48,7 +48,7 @@ const Featured = () => {
         <h2 className="text-3xl font-semibold text-center font-heading">
           Featured Listings
         </h2>
-        <p className="text-md font-normal text-zinc-800 text-center mt-3">
+        <p className="text-md font-normal text-zinc-700 text-center mt-3">
           Discover our handpicked selection of exceptional properties that
           exemplify luxury living at its finest.
         </p>
