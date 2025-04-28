@@ -8,6 +8,8 @@ const PlaceView = () => {
   const { slug } = useParams();
   const [place, setPlace] = useState(null);
 
+  console.log(slug);
+
   const fetchPlace = async () => {
     const response = await fetch(`/api/fetch/get/${slug}`);
     if (!response.ok) {
@@ -16,13 +18,16 @@ const PlaceView = () => {
     return response.json();
   };
 
-  const { data, isLoading, error } = useQuery(["place", slug], fetchPlace);
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["place", slug],
+    queryFn: fetchPlace,
+  });
 
   useEffect(() => {
     if (data) {
       setPlace(data);
     }
-  }, [data]);
+  }, []);
 
   if (isLoading) {
     return (
@@ -62,7 +67,7 @@ const PlaceView = () => {
         </div>
 
         <div className="flex flex-col justify-start items-start gap-5 w-full">
-          <h2 className="text-3xl font-semibold font-heading text-rose-600">
+          <h2 className="text-3xl font-semibold font-heading text-blue-600">
             {place.name}
           </h2>
 

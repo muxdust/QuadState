@@ -73,7 +73,7 @@ const SignUpForm = () => {
         </div>
         <div className="flex flex-col justify-center items-center w-full h-full px-5 py-20 max-w-2xl mx-auto relative">
           <form onSubmit={handleSubmit} className="w-full">
-            <h2 className="text-3xl font-semibold font-heading text-rose-600 text-center">
+            <h2 className="text-3xl font-semibold font-heading text-blue-600 text-center">
               Sign Up to LuxEstate
             </h2>
             <p className="text-md font-normal text-zinc-700 text-center mt-2">
@@ -86,7 +86,7 @@ const SignUpForm = () => {
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-300"
+                className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
                 placeholder="Enter your full name"
                 required
               />
@@ -98,7 +98,7 @@ const SignUpForm = () => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-300"
+                className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
                 placeholder="Enter your email"
                 required
               />
@@ -111,7 +111,7 @@ const SignUpForm = () => {
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-300"
+                  className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
                   placeholder="Enter your password"
                   required
                 />
@@ -134,7 +134,7 @@ const SignUpForm = () => {
                   id="confirmPassword"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-300"
+                  className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
                   placeholder="Confirm your password"
                   required
                 />
@@ -156,7 +156,7 @@ const SignUpForm = () => {
             <button
               type="submit"
               disabled={isPending}
-              className="px-6 py-3 text-md font-medium text-white bg-rose-500 rounded-md hover:bg-rose-600 transition duration-300 cursor-pointer mt-5 w-full disabled:bg-rose-300 disabled:cursor-not-allowed"
+              className="px-6 py-3 text-md font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer mt-5 w-full disabled:bg-blue-300 disabled:cursor-not-allowed"
             >
               {isPending ? "Signing Up..." : "Sign Up"}
             </button>
@@ -164,7 +164,7 @@ const SignUpForm = () => {
               Already have an account?{" "}
               <Link
                 href="/auth/sign-in"
-                className="text-rose-600 hover:text-rose-700 transition duration-300"
+                className="text-blue-600 hover:text-blue-700 transition duration-300"
               >
                 Sign In
               </Link>

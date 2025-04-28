@@ -40,17 +40,15 @@ const DashPage = () => {
   const totalViews = properties.reduce((acc, p) => acc + p.views, 0);
   const totalLikes = properties.reduce((acc, p) => acc + p.likes, 0);
 
-  console.log("User Details:", userDetails);
-
   return (
     <main>
       <div className="flex w-full h-screen">
         <Sidebar
-          userProfile={userDetails.profileImage ? userDetails.profileImage : "/assets/default.webp"}
+          userProfile={userDetails.profileImage || "/assets/default.webp"}
           userName={userDetails.name}
           userEmail={userDetails.email}
-          activeComponent={activeComponent}
           setActiveComponent={setActiveComponent}
+          activeComponent={activeComponent}
         />
         <div className="flex-1 px-5 py-14 w-full">
           {activeComponent === "Dashboard" && (
@@ -59,6 +57,7 @@ const DashPage = () => {
               totalProperties={totalProperties}
               totalViews={totalViews}
               totalLikes={totalLikes}
+              setActiveComponent={setActiveComponent}
             />
           )}
           {activeComponent === "Settings" && (

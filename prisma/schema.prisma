@@ -36,20 +36,22 @@ model Property {
   slug      String
   description   String
   features      String[]
+  rules         String[]
   price         String
   coverImage    String
   otherImages   String[]
   location      String
+  address       String
   propertyArea  String
-  totalFloors   Int
+  totalFloors   String
   furnished     String
-  builtYear     Int
-  parkingAvailable  Boolean
+  builtYear     String
+  parkingAvailable  String
   ownerName     String
   ownerEmail    String
-  ownerPhone    Int
-  views         Int  @default(0)
-  likes         Int  @default(0)
+  ownerPhone    String
+  views         Int?  @default(0)
+  likes         Int?  @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

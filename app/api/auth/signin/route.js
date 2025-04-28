@@ -29,7 +29,7 @@ export async function POST(request) {
     const token = jwt.sign(
       { id: user.id, email: user.email, role: user.role },
       process.env.JWT_SECRET,
-      { expiresIn: "1h" }
+      { expiresIn: "1d" }
     );
 
     if (!token) {
@@ -46,7 +46,7 @@ export async function POST(request) {
 
     response.cookies.set("auth-token", token, {
       httpOnly: true,
-      maxAge: 3600 * 24,
+      maxAge: 3600 * 24 * 30,
       path: "/",
     });
 

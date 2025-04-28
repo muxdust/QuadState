@@ -36,7 +36,7 @@ const OurServices = () => {
               key={index}
               className="flex flex-col justify-start items-start w-full bg-white shadow-lg rounded-lg p-5 gap-3"
             >
-              <span className="p-2 bg-rose-100 rounded-full text-rose-600">
+              <span className="p-2 bg-blue-100 rounded-full text-blue-600">
                 {service.icon}
               </span>
               <h3 className="text-xl font-semibold font-heading text-zinc-900">

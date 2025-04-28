@@ -82,7 +82,7 @@ const SignInForm = () => {
           onSubmit={handleSubmit}
           className="flex flex-col justify-center items-center w-full h-full px-5 py-20 max-w-2xl mx-auto"
         >
-          <h2 className="text-3xl font-semibold font-heading text-rose-600 text-center">
+          <h2 className="text-3xl font-semibold font-heading text-blue-600 text-center">
             Sign In to LuxEstate
           </h2>
           <p className="text-md font-normal text-zinc-700 text-center mt-2">
@@ -96,7 +96,7 @@ const SignInForm = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-300"
+              className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
               placeholder="Enter your email"
               required
             />
@@ -110,7 +110,7 @@ const SignInForm = () => {
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-rose-500 transition duration-300"
+                className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
                 placeholder="Enter your password"
                 required
               />
@@ -127,7 +127,7 @@ const SignInForm = () => {
           <button
             type="submit"
             disabled={isPending}
-            className="px-6 py-3 text-md font-medium text-white bg-rose-500 rounded-md hover:bg-rose-600 transition duration-300 cursor-pointer mt-5 w-full disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-6 py-3 text-md font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer mt-5 w-full disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isPending ? "Signing In..." : "Sign In"}
           </button>
@@ -136,7 +136,7 @@ const SignInForm = () => {
             Don't have an account?{" "}
             <Link
               href="/auth/sign-up"
-              className="text-rose-600 hover:text-rose-700 transition duration-300"
+              className="text-blue-600 hover:text-blue-700 transition duration-300"
             >
               Sign Up
             </Link>

@@ -2,8 +2,9 @@ import dbClient from "@/prisma/dbClient";
 import { NextResponse } from "next/server";
 import getDataFromToken from "@/lib/getDataFromToken";
 import bcryptjs from "bcryptjs";
+import { uploadImage } from "@/lib/cloudinary";
 
-export async function PUT(request) {
+export async function PATCH(request) {
   try {
     const { email: userEmail } = await getDataFromToken(request);
 
@@ -19,7 +20,8 @@ export async function PUT(request) {
       updatedData.password = hashedPassword;
     }
     if (profileImage) {
-      updatedData.profileImage = profileImage;
+      const uploadedImage = await uploadImage(profileImage, "luxestate-users");
+      updatedData.profileImage = uploadedImage.url;
     }
 
     await dbClient.user.update({

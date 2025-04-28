@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center w-full">
           <Link
             href="/"
-            className="text-2xl font-semibold font-heading text-rose-600"
+            className="text-2xl font-semibold font-heading text-blue-600"
           >
             LuxEstate
           </Link>
@@ -33,7 +33,7 @@ const Navbar = () => {
               <li key={item.name}>
                 <Link
                   href={item.path}
-                  className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
+                  className="text-md font-normal text-zinc-700 hover:text-blue-600 transition duration-300 cursor-pointer"
                 >
                   {item.name}
                 </Link>
@@ -43,13 +43,13 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-5">
             <Link
               href={"/auth/sign-in"}
-              className="px-4 py-2 text-sm font-medium text-rose-500 bg-white rounded-md hover:bg-rose-600 hover:text-white border border-rose-600 transition duration-300 cursor-pointer"
+              className="px-4 py-2 text-sm font-medium text-blue-500 bg-white rounded-md hover:bg-blue-600 hover:text-white border border-blue-600 transition duration-300 cursor-pointer"
             >
               Sign In
             </Link>
             <Link
               href={"/auth/sign-up"}
-              className="px-4 py-2 text-sm font-medium text-white bg-rose-500 rounded-md hover:bg-rose-600 transition duration-300 cursor-pointer"
+              className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer"
             >
               Sign Up
             </Link>
@@ -68,7 +68,7 @@ const Navbar = () => {
                 <li key={item.name}>
                   <Link
                     href={item.path}
-                    className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
+                    className="text-md font-normal text-zinc-700 hover:text-blue-600 transition duration-300 cursor-pointer"
                   >
                     {item.name}
                   </Link>
@@ -78,13 +78,13 @@ const Navbar = () => {
             <div className="flex flex-col items-center gap-5 mt-5 w-full md:w-auto">
               <Link
                 href={"/auth/sign-in"}
-                className="px-4 py-2 text-sm font-medium text-rose-500 bg-white rounded-md hover:bg-rose-600 hover:text-white border border-rose-600 transition duration-300 cursor-pointer w-full text-center"
+                className="px-4 py-2 text-sm font-medium text-blue-500 bg-white rounded-md hover:bg-blue-600 hover:text-white border border-blue-600 transition duration-300 cursor-pointer w-full text-center"
               >
                 Sign In
               </Link>
               <Link
                 href={"/auth/sign-up"}
-                className="px-4 py-2 text-sm font-medium text-white bg-rose-500 rounded-md hover:bg-rose-600 transition duration-300 cursor-pointer w-full text-center"
+                className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer w-full text-center"
               >
                 Sign Up
               </Link>

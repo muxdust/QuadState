@@ -12,7 +12,13 @@ import { useRouter } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
 import Alert from "../ui/Alert";
 
-const Sidebar = ({ setActiveComponent, userProfile, userName, userEmail, activeComponent }) => {
+const Sidebar = ({
+  setActiveComponent,
+  activeComponent,
+  userProfile,
+  userName,
+  userEmail,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [notification, setNotification] = useState({
     message: "",
@@ -63,25 +69,24 @@ const Sidebar = ({ setActiveComponent, userProfile, userName, userEmail, activeC
 
   const handleLogout = () => {
     logoutMutation.mutate();
-    router.push("/auth/login");
+    router.push("/auth/sign-in");
   };
 
   const sidebarItems = [
-    { name: "Dashboard", icon: <LayoutDashboard />, component: "dashboard" },
+    { name: "Dashboard", icon: <LayoutDashboard />, component: "Dashboard" },
     { name: "Properties", icon: <Building />, component: "Properties" },
-    { name: "Settings", icon: <Settings />, component: "settings" },
+    { name: "Settings", icon: <Settings />, component: "Settings" },
   ];
 
   return (
-    <nav className="flex">
+    <nav className="flex bg-white">
       {showAlert && (
         <Alert
-          message={notification.message}
-          type={notification.type}
+          notification={notification}
           toggleAlert={() => setShowAlert(false)}
         />
       )}
-      <div className="hidden lg:flex flex-col w-64 h-screen sticky top-0 border-r border-zinc-300 bg-transparent p-5">
+      <div className="hidden lg:flex flex-col w-64 h-screen sticky top-0 border-r border-zinc-300 bg-white p-5">
         <div className="flex flex-col items-start justify-start gap-3 w-full">
           <img
             src={userProfile}
@@ -98,11 +103,12 @@ const Sidebar = ({ setActiveComponent, userProfile, userName, userEmail, activeC
         <ul className="flex flex-col gap-3 mt-5">
           {sidebarItems.map((item, index) => (
             <li
-              className={`px-3 py-2 flex items-center justify-start gap-3 bg-transparent hover:bg-rose-600 hover:text-white rounded-md transition duration-300 cursor-pointer ${
-                activeComponent === item.component
-                  ? "bg-rose-600 text-white"
-                  : "text-zinc-800"
-              }`}
+              className={`px-3 py-2 flex items-center justify-start gap-3 rounded-md transition duration-300 cursor-pointer
+             ${
+               activeComponent === item.component
+                 ? "bg-blue-600 text-white"
+                 : "bg-white text-zinc-800 hover:bg-blue-600 hover:text-white"
+             }`}
               key={index}
               onClick={() => handleComponentChange(item.component)}
             >
@@ -111,17 +117,20 @@ const Sidebar = ({ setActiveComponent, userProfile, userName, userEmail, activeC
             </li>
           ))}
         </ul>
-        <button className="mt-auto flex items-center justify-start gap-2 px-3 py-2 bg-red-600 text-white rounded-md transition duration-300 cursor-pointer hover:bg-red-700">
+        <button
+          className="mt-auto flex items-center justify-start gap-2 px-3 py-2 bg-red-600 text-white rounded-md transition duration-300 cursor-pointer hover:bg-red-700"
+          onClick={handleLogout}
+        >
           <LogOutIcon size={24} />
           Logout
         </button>
       </div>
-      <div className="flex lg:hidden flex-col w-full bg-transparent px-5 py-3 fixed top-0 z-50 border-b border-zinc-300">
+      <div className="flex lg:hidden flex-col w-full bg-white px-5 py-3 fixed top-0 z-50 border-b border-zinc-300">
         <div className="flex items-center justify-between w-full">
           <img
             src={userProfile}
             alt=""
-            className="w-14 h-14 object-cover rounded-full"
+            className="w-10 h-10 object-cover rounded-full"
           />
           <button className="cursor-pointer" onClick={toggleSidebar}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -132,10 +141,10 @@ const Sidebar = ({ setActiveComponent, userProfile, userName, userEmail, activeC
             <ul className="flex flex-col gap-4 w-full justify-center items-center">
               {sidebarItems.map((item, index) => (
                 <li
-                  className={`px-3 py-2 flex items-center justify-start gap-3 bg-transparent hover:bg-rose-600 hover:text-white rounded-md transition duration-300 cursor-pointer ${
+                  className={`px-3 py-2 w-full flex items-center justify-start gap-3 rounded-md transition duration-300 cursor-pointer ${
                     activeComponent === item.component
-                      ? "bg-rose-600 text-white"
-                      : "text-zinc-800"
+                      ? "bg-blue-600 text-white"
+                      : "bg-white text-zinc-800 hover:bg-blue-600 hover:text-white"
                   }`}
                   key={index}
                   onClick={() => handleComponentChange(item.component)}
@@ -144,14 +153,14 @@ const Sidebar = ({ setActiveComponent, userProfile, userName, userEmail, activeC
                   <span className="text-md font-normal">{item.name}</span>
                 </li>
               ))}
-              <button
-                className="mt-4 flex items-center justify-start gap-2 px-3 py-2 bg-red-600 text-white rounded-md transition duration-300 cursor-pointer hover:bg-red-700"
-                onClick={handleLogout}
-              >
-                <LogOutIcon size={24} />
-                Logout
-              </button>
             </ul>
+            <button
+              className="mt-4 self-center w-full flex items-center justify-center gap-2 px-3 py-2 bg-red-600 text-white rounded-md transition duration-300 cursor-pointer hover:bg-red-700"
+              onClick={handleLogout}
+            >
+              <LogOutIcon size={24} />
+              Logout
+            </button>
           </div>
         )}
       </div>

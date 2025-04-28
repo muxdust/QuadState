@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="flex justify-center items-center w-full py-10 border-t border-zinc-300 bg-white">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-full px-5 lg:container justify-center items-stretch">
         <div className="flex flex-col gap-3 justify-start items-start w-full">
-          <h2 className="text-2xl font-semibold font-heading text-rose-600">
+          <h2 className="text-2xl font-semibold font-heading text-blue-600">
             LuxEstate
           </h2>
           <p className="text-md lg:text-lg font-normal text-zinc-700">
@@ -15,14 +15,14 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex flex-col gap-3 justify-start items-start w-full">
-          <h2 className="text-lg font-semibold font-heading text-rose-600">
+          <h2 className="text-lg font-semibold font-heading text-blue-600">
             Quick Links
           </h2>
           <ul className="flex flex-col gap-2">
             <li>
               <Link
                 href="/"
-                className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
+                className="text-md font-normal text-zinc-700 hover:text-blue-600 transition duration-300 cursor-pointer"
               >
                 Home
               </Link>
@@ -30,7 +30,7 @@ const Footer = () => {
             <li>
               <Link
                 href="/properties"
-                className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
+                className="text-md font-normal text-zinc-700 hover:text-blue-600 transition duration-300 cursor-pointer"
               >
                 Properties
               </Link>
@@ -38,7 +38,7 @@ const Footer = () => {
             <li>
               <Link
                 href="/about"
-                className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
+                className="text-md font-normal text-zinc-700 hover:text-blue-600 transition duration-300 cursor-pointer"
               >
                 About Us
               </Link>
@@ -46,7 +46,7 @@ const Footer = () => {
             <li>
               <Link
                 href="/contact"
-                className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
+                className="text-md font-normal text-zinc-700 hover:text-blue-600 transition duration-300 cursor-pointer"
               >
                 Contact Us
               </Link>
@@ -54,14 +54,14 @@ const Footer = () => {
           </ul>
         </div>
         <div className="flex flex-col gap-3 justify-start items-start w-full">
-          <h2 className="text-lg font-semibold font-heading text-rose-600">
+          <h2 className="text-lg font-semibold font-heading text-blue-600">
             Follow Us
           </h2>
           <ul className="flex flex-col gap-2">
             <li>
               <Link
                 href="#"
-                className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
+                className="text-md font-normal text-zinc-700 hover:text-blue-600 transition duration-300 cursor-pointer"
               >
                 Facebook
               </Link>
@@ -69,7 +69,7 @@ const Footer = () => {
             <li>
               <Link
                 href="#"
-                className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
+                className="text-md font-normal text-zinc-700 hover:text-blue-600 transition duration-300 cursor-pointer"
               >
                 Twitter
               </Link>
@@ -77,7 +77,7 @@ const Footer = () => {
             <li>
               <Link
                 href="#"
-                className="text-md font-normal text-zinc-700 hover:text-rose-600 transition duration-300 cursor-pointer"
+                className="text-md font-normal text-zinc-700 hover:text-blue-600 transition duration-300 cursor-pointer"
               >
                 Instagram
               </Link>
@@ -85,7 +85,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="flex flex-col gap-3 justify-start items-start w-full">
-          <h2 className="text-lg font-semibold font-heading text-rose-600">
+          <h2 className="text-lg font-semibold font-heading text-blue-600">
             Contact Us
           </h2>
           <p className="text-md font-normal text-zinc-700">

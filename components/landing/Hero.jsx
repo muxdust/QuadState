@@ -21,7 +21,7 @@ const Hero = () => {
           dream home awaits.
         </p>
         <div className="flex justify-center lg:justify-start">
-          <button className="px-6 py-3 text-md font-medium text-white bg-rose-500 rounded-md hover:bg-rose-600 transition duration-300 cursor-pointer flex items-center gap-2">
+          <button className="px-6 py-3 text-md font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer flex items-center gap-2">
             Browse Properties
             <Compass className="inline-block" size={20} />
           </button>

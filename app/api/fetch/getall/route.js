@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 export async function GET() {
   try {
     const allProperties = await dbClient.property.findMany({
-      include: {
+      select: {
         name: true,
         slug: true,
         description: true,

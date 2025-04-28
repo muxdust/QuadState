@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 const Properties = () => {
   const [places, setPlaces] = useState([]);
+  const [err, setErr] = useState("");
 
   const fetchPlaces = async () => {
     const response = await fetch("/api/fetch/getall");
@@ -21,23 +22,15 @@ const Properties = () => {
     if (data) {
       setPlaces(data);
     }
-  }, []);
 
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center min-h-screen">
-        Loading...
-      </div>
-    );
-  }
+    if (error) {
+      setErr("Error loading properties.");
+    }
 
-  if (error) {
-    return (
-      <div className="flex justify-center items-center min-h-screen text-red-500">
-        Error loading properties.
-      </div>
-    );
-  }
+    if (isLoading) {
+      setErr("Loading...");
+    }
+  }, [data, error, isLoading]);
 
   return (
     <section className="flex justify-center items-center w-full min-h-screen py-14">
@@ -49,12 +42,18 @@ const Properties = () => {
           Discover our handpicked selection of exceptional properties that
           exemplify luxury living at its finest.
         </p>
-        <div className="mt-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-start items-stretch w-full gap-5">
-          {places.map((place, index) => (
-            <PlaceCard key={index} place={place} />
-          ))}
-        </div>
-        <button className="mt-10 px-6 py-3 text-md font-medium text-white bg-rose-500 rounded-md hover:bg-rose-600 transition duration-300 cursor-pointer flex items-center gap-1">
+
+        {places.length > 0 ? (
+          <div className="mt-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-start items-stretch w-full gap-5">
+            {places.map((place, index) => (
+              <PlaceCard key={index} place={place} />
+            ))}
+          </div>
+        ) : (
+          <p className="text-red-500 text-center mt-10">{err}</p>
+        )}
+
+        <button className="mt-10 px-6 py-3 text-md font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer flex items-center gap-1">
           View All Listings
           <ArrowRight className="inline-block" size={22} />
         </button>

@@ -1,8 +1,8 @@
-import { Playfair_Display, Noto_Sans } from "next/font/google";
+import { Inter, Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { QueryProvider } from "@/context/QueryProvider";
 
-const heading = Playfair_Display({
+const heading = Inter({
   variable: "--font-heading",
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],

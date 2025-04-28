@@ -10,12 +10,13 @@ export async function GET({ params }) {
     }
 
     const property = await dbClient.property.findUnique({
-      where: { slug },
-      include: {
+      where: { slug: slug },
+      select: {
         name: true,
         slug: true,
         description: true,
         features: true,
+        rules: true,
         price: true,
         coverImage: true,
         otherImages: true,
