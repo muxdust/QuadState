@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import PlaceCard from "../ui/PlaceCard";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowRight } from "lucide-react";
 
 const Properties = () => {
   const [places, setPlaces] = useState([]);
@@ -16,7 +15,10 @@ const Properties = () => {
     return response.json();
   };
 
-  const { data, isLoading, error } = useQuery("places", fetchPlaces);
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["places"],
+    queryFn: fetchPlaces,
+  });
 
   useEffect(() => {
     if (data) {
@@ -33,7 +35,7 @@ const Properties = () => {
   }, [data, error, isLoading]);
 
   return (
-    <section className="flex justify-center items-center w-full min-h-screen py-14">
+    <section className="flex justify-center items-start w-full min-h-screen py-14">
       <div className="flex flex-col items-center justify-center w-full lg:container px-5">
         <h2 className="text-3xl font-semibold text-center font-heading">
           Explore Listings
@@ -52,11 +54,6 @@ const Properties = () => {
         ) : (
           <p className="text-red-500 text-center mt-10">{err}</p>
         )}
-
-        <button className="mt-10 px-6 py-3 text-md font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer flex items-center gap-1">
-          View All Listings
-          <ArrowRight className="inline-block" size={22} />
-        </button>
       </div>
     </section>
   );
