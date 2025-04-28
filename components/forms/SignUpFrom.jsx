@@ -5,6 +5,7 @@ import { useMutation } from "@tanstack/react-query";
 import { Eye, EyeClosed } from "lucide-react";
 import Link from "next/link";
 import Alert from "../ui/Alert";
+import { useRouter } from "next/navigation";
 
 const imagepath = "/assets/sign-up.webp";
 
@@ -18,6 +19,8 @@ const SignUpForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const router = useRouter();
 
   const { mutate, isPending } = useMutation({
     mutationFn: async () => {
@@ -46,6 +49,7 @@ const SignUpForm = () => {
       setEmail("");
       setPassword("");
       setConfirmPassword("");
+      router.push("/auth/sign-in");
     },
     onError: (error) => {
       setNotification({

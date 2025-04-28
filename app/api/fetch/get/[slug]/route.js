@@ -1,15 +1,15 @@
 import dbClient from "@/prisma/dbClient";
 import { NextResponse } from "next/server";
 
-export async function GET({ params }) {
+export async function GET(request, { params }) {
   try {
-    const { slug } = params;
+    const { slug } = await params;
 
     if (!slug) {
       return NextResponse.json({ error: "Slug is required" }, { status: 400 });
     }
 
-    const property = await dbClient.property.findUnique({
+    const property = await dbClient.property.findFirst({
       where: { slug: slug },
       select: {
         name: true,
@@ -40,6 +40,7 @@ export async function GET({ params }) {
         { status: 404 }
       );
     }
+    
     return NextResponse.json(property, { status: 200 });
   } catch (error) {
     console.error("Error in fetching slug:", error);

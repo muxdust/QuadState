@@ -1,14 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useParams } from "next/navigation";
-import { Home, Star, User } from "lucide-react";
+import { Home, Star, User, Gavel } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 
 const PlaceView = () => {
   const { slug } = useParams();
-  const [place, setPlace] = useState(null);
-
-  console.log(slug);
 
   const fetchPlace = async () => {
     const response = await fetch(`/api/fetch/get/${slug}`);
@@ -18,16 +15,15 @@ const PlaceView = () => {
     return response.json();
   };
 
-  const { data, isLoading, error } = useQuery({
+  const {
+    data: place,
+    isLoading,
+    error,
+  } = useQuery({
     queryKey: ["place", slug],
     queryFn: fetchPlace,
+    enabled: !!slug,
   });
-
-  useEffect(() => {
-    if (data) {
-      setPlace(data);
-    }
-  }, []);
 
   if (isLoading) {
     return (
@@ -45,8 +41,16 @@ const PlaceView = () => {
     );
   }
 
+  if (!place) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        No place found.
+      </div>
+    );
+  }
+
   return (
-    <section className="flex flex-col items-center justify-start w-full">
+    <section className="flex flex-col items-center justify-start w-full py-14">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full lg:container px-5">
         <div className="w-full grid grid-cols-2 items-stretch justify-start gap-5">
           <img
@@ -73,7 +77,7 @@ const PlaceView = () => {
 
           <div className="flex flex-col gap-2 w-full">
             <h3 className="text-xl font-semibold text-zinc-700 flex items-center gap-2">
-              <Home size={20} /> Property Details
+              <Home size={20} className="text-blue-600" /> Property Details
             </h3>
             <p className="text-md text-zinc-700">{place.description}</p>
             <p className="text-md text-zinc-700">Location: {place.location}</p>
@@ -89,7 +93,7 @@ const PlaceView = () => {
 
           <div className="flex flex-col gap-2 w-full">
             <h3 className="text-xl font-semibold text-zinc-700 flex items-center gap-2">
-              <Star size={20} /> Features
+              <Star size={20} className="text-blue-600" /> Features
             </h3>
             <ul className="list-disc list-inside flex flex-col gap-1">
               {place.features.map((feature, index) => (
@@ -102,7 +106,20 @@ const PlaceView = () => {
 
           <div className="flex flex-col gap-2 w-full">
             <h3 className="text-xl font-semibold text-zinc-700 flex items-center gap-2">
-              <User size={20} /> Owner Information
+              <Gavel size={20} className="text-blue-600" /> Rules
+            </h3>
+            <ul className="list-disc list-inside flex flex-col gap-1">
+              {place.rules.map((rule, index) => (
+                <li key={index} className="text-md text-zinc-700">
+                  {rule}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="flex flex-col gap-2 w-full">
+            <h3 className="text-xl font-semibold text-zinc-700 flex items-center gap-2">
+              <User size={20} className="text-blue-600" /> Owner Information
             </h3>
             <p className="text-md text-zinc-700">Name: {place.ownerName}</p>
             <p className="text-md text-zinc-700">Phone: {place.ownerPhone}</p>

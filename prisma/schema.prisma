@@ -8,14 +8,14 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  name      String
-  email     String   @unique
-  password  String
-  profileImage  String?   @default("https://res-console.cloudinary.com/dj98bhfz1/media_explorer_thumbnails/ae0332e1144843d6f14d82a08c53832b/detailed")
-  role      String   @default("user")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  email        String   @unique
+  password     String
+  profileImage String?  @default("https://res-console.cloudinary.com/dj98bhfz1/media_explorer_thumbnails/ae0332e1144843d6f14d82a08c53832b/detailed")
+  role         String   @default("user")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 
   properties Property[] @relation("UserProperties")
 }
@@ -31,30 +31,30 @@ model Admin {
 }
 
 model Property {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  name      String
-  slug      String
-  description   String
-  features      String[]
-  rules         String[]
-  price         String
-  coverImage    String
-  otherImages   String[]
-  location      String
-  address       String
-  propertyArea  String
-  totalFloors   String
-  furnished     String
-  builtYear     String
-  parkingAvailable  String
-  ownerName     String
-  ownerEmail    String
-  ownerPhone    String
-  views         Int?  @default(0)
-  likes         Int?  @default(0)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  name             String
+  slug             String   @unique
+  description      String
+  features         String[]
+  rules            String[]
+  price            String
+  coverImage       String
+  otherImages      String[]
+  location         String
+  address          String
+  propertyArea     String
+  totalFloors      String
+  furnished        String
+  builtYear        String
+  parkingAvailable String
+  ownerName        String
+  ownerEmail       String
+  ownerPhone       String
+  views            Int?     @default(0)
+  likes            Int?     @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 
-  userId    String   @db.ObjectId
-  user      User     @relation("UserProperties", fields: [userId], references: [id])
+  userId String @db.ObjectId
+  user   User   @relation("UserProperties", fields: [userId], references: [id])
 }
