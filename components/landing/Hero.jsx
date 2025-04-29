@@ -1,6 +1,7 @@
 import React from "react";
 const imagepath = "/assets/hero.webp";
 import { Compass } from "lucide-react";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -21,10 +22,13 @@ const Hero = () => {
           dream home awaits.
         </p>
         <div className="flex justify-center lg:justify-start">
-          <button className="px-6 py-3 text-md font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer flex items-center gap-2">
+          <Link
+            href="/properties"
+            className="px-6 py-3 text-md font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer flex items-center gap-2"
+          >
             Browse Properties
             <Compass className="inline-block" size={20} />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

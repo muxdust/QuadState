@@ -37,7 +37,7 @@ const Properties = () => {
   return (
     <section className="flex justify-center items-start w-full min-h-screen py-14">
       <div className="flex flex-col items-center justify-center w-full lg:container px-5">
-        <h2 className="text-3xl font-semibold text-center font-heading">
+        <h2 className="text-4xl text-zinc-800 font-semibold text-center font-heading">
           Explore Listings
         </h2>
         <p className="text-md font-normal text-zinc-700 text-center mt-3">

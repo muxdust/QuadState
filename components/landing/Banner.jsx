@@ -1,5 +1,6 @@
 import React from "react";
 import { Bot } from "lucide-react";
+import Link from "next/link";
 
 const Banner = () => {
   return (
@@ -13,10 +14,13 @@ const Banner = () => {
           provides accurate property valuations and insights to help you make
           informed decisions.
         </p>
-        <button className="px-6 py-3 text-md font-medium text-blue-600 bg-white rounded-md hover:bg-zinc-200 transition duration-300 cursor-pointer flex items-center gap-1">
+        <Link
+          href="/luxeai"
+          className="px-6 py-3 text-md font-medium text-blue-600 bg-white rounded-md hover:bg-zinc-200 transition duration-300 cursor-pointer flex items-center gap-1"
+        >
           Try LuxeAi
           <Bot className="inline-block" size={20} />
-        </button>
+        </Link>
       </div>
     </section>
   );

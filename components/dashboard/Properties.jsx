@@ -168,7 +168,7 @@ const Properties = ({ userProperties }) => {
                         setSelectedProperty(property);
                         setShowEditProperty(true);
                       }}
-                      className="text-blue-500 hover:text-blue-600"
+                      className="text-blue-600 hover:text-blue-600"
                     >
                       <Edit size={20} />
                     </button>
