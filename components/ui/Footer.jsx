@@ -89,7 +89,7 @@ const Footer = () => {
             Contact Us
           </h2>
           <p className="text-md font-normal text-zinc-700">
-            123 Luxe St, Beverly Hills, CA 90210
+            123 Quad St, Beverly Hills, CA 90210
           </p>
           <p className="text-md font-normal text-zinc-700">+1 (234) 567-890</p>
           <p className="text-md font-normal text-zinc-700">

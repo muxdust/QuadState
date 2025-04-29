@@ -15,8 +15,8 @@ const normal = Noto_Sans({
 });
 
 export const metadata = {
-  title: "Luxe Estate",
-  description: "Luxe Estate buy luxury properties and sell luxury properties",
+  title: "QuadEstate",
+  description: "QuadEstate buy luxury properties and sell luxury properties",
   keywords: ["luxury", "properties", "estate", "real estate", "luxury estate"],
 };
 

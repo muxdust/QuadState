@@ -2,21 +2,36 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { useQuery } from "@tanstack/react-query";
+
+const fetchLoginStatus = async () => {
+  const res = await fetch("/api/auth/isloggedin", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  if (!res.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return res.json();
+};
 
 const menuItems = [
   { name: "Home", path: "/" },
   { name: "Properties", path: "/properties" },
-  { name: "LuxeAi", path: "/luxeai" },
-  { name: "About", path: "/about" },
-  { name: "Contact", path: "/contact" },
+  { name: "QuadAi", path: "/quadai" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { data, isLoading } = useQuery({
+    queryKey: ["authStatus"],
+    queryFn: fetchLoginStatus,
+  });
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const isLoggedIn = data?.isLoggedIn;
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <nav className="flex justify-center items-center w-full border-b border-zinc-300 fixed top-0 z-50 bg-white">
@@ -41,18 +56,29 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="hidden lg:flex items-center gap-5">
-            <Link
-              href={"/auth/sign-in"}
-              className="px-4 py-2 text-sm font-medium text-blue-600 bg-white rounded-md hover:bg-blue-600 hover:text-white border border-blue-600 transition duration-300 cursor-pointer"
-            >
-              Sign In
-            </Link>
-            <Link
-              href={"/auth/sign-up"}
-              className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer"
-            >
-              Sign Up
-            </Link>
+            {!isLoading && isLoggedIn ? (
+              <Link
+                href="/dashboard"
+                className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer"
+              >
+                Dashboard
+              </Link>
+            ) : (
+              <>
+                <Link
+                  href="/auth/sign-in"
+                  className="px-4 py-2 text-sm font-medium text-blue-600 bg-white rounded-md hover:bg-blue-600 hover:text-white border border-blue-600 transition duration-300 cursor-pointer"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  href="/auth/sign-up"
+                  className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer"
+                >
+                  Sign Up
+                </Link>
+              </>
+            )}
           </div>
           <button
             className="lg:hidden cursor-pointer text-zinc-800"
@@ -76,18 +102,29 @@ const Navbar = () => {
               ))}
             </ul>
             <div className="flex flex-col items-center gap-5 mt-5 w-full md:w-auto">
-              <Link
-                href={"/auth/sign-in"}
-                className="px-4 py-2 text-sm font-medium text-blue-600 bg-white rounded-md hover:bg-blue-600 hover:text-white border border-blue-600 transition duration-300 cursor-pointer w-full text-center"
-              >
-                Sign In
-              </Link>
-              <Link
-                href={"/auth/sign-up"}
-                className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer w-full text-center"
-              >
-                Sign Up
-              </Link>
+              {!isLoading && isLoggedIn ? (
+                <Link
+                  href="/dashboard"
+                  className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer w-full text-center"
+                >
+                  Dashboard
+                </Link>
+              ) : (
+                <>
+                  <Link
+                    href="/auth/sign-in"
+                    className="px-4 py-2 text-sm font-medium text-blue-600 bg-white rounded-md hover:bg-blue-600 hover:text-white border border-blue-600 transition duration-300 cursor-pointer w-full text-center"
+                  >
+                    Sign In
+                  </Link>
+                  <Link
+                    href="/auth/sign-up"
+                    className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer w-full text-center"
+                  >
+                    Sign Up
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         )}

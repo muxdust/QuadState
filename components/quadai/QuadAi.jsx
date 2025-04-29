@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 
-const LuxeAi = () => {
+const QuadAi = () => {
   const [bedrooms, setBedrooms] = useState(0);
   const [bathrooms, setBathrooms] = useState(0);
   const [livingArea, setLivingArea] = useState(0);
@@ -18,7 +18,7 @@ const LuxeAi = () => {
 
   const { mutate, isLoading } = useMutation({
     mutationFn: async () => {
-      const response = await fetch("/api/luxeai", {
+      const response = await fetch("/api/quadeai", {
         method: "POST",
         body: JSON.stringify({
           bedrooms,
@@ -47,10 +47,10 @@ const LuxeAi = () => {
     <section className="flex justify-center items-center w-full min-h-screen py-14">
       <div className="flex flex-col items-center justify-center w-full lg:container px-5">
         <h2 className="text-4xl text-zinc-800 font-semibold text-center font-heading">
-          Luxe AI
+          QuadAI
         </h2>
         <p className="text-lg font-medium text-zinc-800 text-center mt-3">
-          Predict the price of your house with our LuxeAI model.
+          Predict the price of your house with our QuadAI model.
         </p>
         <form
           action=""
@@ -235,4 +235,4 @@ const LuxeAi = () => {
   );
 };
 
-export default LuxeAi;
+export default QuadAi;
