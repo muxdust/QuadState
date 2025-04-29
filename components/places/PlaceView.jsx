@@ -87,7 +87,12 @@ const PlaceView = () => {
               Built Year: {place.builtYear}
             </p>
             <p className="text-md text-zinc-700">
-              Parking: {place.parkingAvailable ? "Available" : "Not Available"}
+              Parking:{" "}
+              {place.parkingAvailable === "yes" ||
+              place.parkingAvailable === "Yes" ||
+              place.parkingAvailable === "YES"
+                ? "Available"
+                : "Not Available"}
             </p>
           </div>
 

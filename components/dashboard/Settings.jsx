@@ -114,7 +114,7 @@ const Settings = ({ userDetails }) => {
       </div>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col justify-start items-start w-full gap-2 max-w-xl"
+        className="flex flex-col justify-start items-start w-full gap-2 max-w-xl mt-3"
       >
         <img
           src={userDetails.profileImage || "/default-profile.png"}
