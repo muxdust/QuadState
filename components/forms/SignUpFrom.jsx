@@ -78,7 +78,7 @@ const SignUpForm = () => {
         <div className="flex flex-col justify-center items-center w-full h-full px-5 py-20 max-w-2xl mx-auto relative">
           <form onSubmit={handleSubmit} className="w-full">
             <h2 className="text-3xl font-semibold font-heading text-blue-600 text-center">
-              Sign Up to LuxEstate
+              Sign Up to QuadState
             </h2>
             <p className="text-md font-normal text-zinc-700 text-center mt-2">
               Create your account to get started

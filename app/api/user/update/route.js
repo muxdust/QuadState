@@ -20,7 +20,7 @@ export async function PATCH(request) {
       updatedData.password = hashedPassword;
     }
     if (profileImage) {
-      const uploadedImage = await uploadImage(profileImage, "luxestate-users");
+      const uploadedImage = await uploadImage(profileImage, "quadstate-users");
       updatedData.profileImage = uploadedImage.url;
     }
 

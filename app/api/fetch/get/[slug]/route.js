@@ -1,5 +1,11 @@
 import dbClient from "@/prisma/dbClient";
 import { NextResponse } from "next/server";
+import { LRUCache } from "next/dist/server/lib/lru-cache";
+
+const cache = new LRUCache({
+  max: 100,
+  ttl: 1000 * 60 * 10,
+});
 
 export async function GET(request, { params }) {
   try {
@@ -7,6 +13,11 @@ export async function GET(request, { params }) {
 
     if (!slug) {
       return NextResponse.json({ error: "Slug is required" }, { status: 400 });
+    }
+
+    const cachedProperty = cache.get(slug);
+    if (cachedProperty) {
+      return NextResponse.json(cachedProperty, { status: 200 });
     }
 
     const property = await dbClient.property.findFirst({
@@ -40,7 +51,9 @@ export async function GET(request, { params }) {
         { status: 404 }
       );
     }
-    
+
+    cache.set(slug, property);
+
     return NextResponse.json(property, { status: 200 });
   } catch (error) {
     console.error("Error in fetching slug:", error);

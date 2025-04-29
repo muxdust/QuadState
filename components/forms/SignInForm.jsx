@@ -83,7 +83,7 @@ const SignInForm = () => {
           className="flex flex-col justify-center items-center w-full h-full px-5 py-20 max-w-2xl mx-auto"
         >
           <h2 className="text-3xl font-semibold font-heading text-blue-600 text-center">
-            Sign In to LuxEstate
+            Sign In to QuadState
           </h2>
           <p className="text-md font-normal text-zinc-700 text-center mt-2">
             Please enter your credentials to access your account

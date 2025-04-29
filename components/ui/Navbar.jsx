@@ -26,7 +26,7 @@ const Navbar = () => {
             href="/"
             className="text-2xl font-semibold font-heading text-blue-600"
           >
-            LuxEstate
+            QuadState
           </Link>
           <ul className="gap-5 hidden lg:flex items-center">
             {menuItems.map((item) => (

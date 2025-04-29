@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-full px-5 lg:container justify-center items-stretch">
         <div className="flex flex-col gap-3 justify-start items-start w-full">
           <h2 className="text-2xl font-semibold font-heading text-blue-600">
-            LuxEstate
+            QuadState
           </h2>
           <p className="text-md lg:text-lg font-normal text-zinc-700">
             Discover the finest luxury properties with our expert guidance. Your
@@ -93,7 +93,7 @@ const Footer = () => {
           </p>
           <p className="text-md font-normal text-zinc-700">+1 (234) 567-890</p>
           <p className="text-md font-normal text-zinc-700">
-            LuxEstate@gmail.com
+            QuadState@gmail.com
           </p>
         </div>
       </div>

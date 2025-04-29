@@ -57,10 +57,10 @@ export async function POST(request) {
     const featureArray = features.split(",").map((feature) => feature.trim());
     const ruleArray = rules.split(",").map((rule) => rule.trim());
 
-    const uploadedCoverImage = await uploadImage(coverImage, "luxestate");
+    const uploadedCoverImage = await uploadImage(coverImage, "quadstate");
 
     const uploadedOtherImages = await Promise.all(
-      otherImages.map((img) => uploadImage(img, "luxestate"))
+      otherImages.map((img) => uploadImage(img, "quadstate"))
     );
 
     await dbClient.property.create({
