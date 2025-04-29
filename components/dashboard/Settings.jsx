@@ -9,8 +9,8 @@ const Settings = ({ userDetails }) => {
   const [email, setEmail] = useState(userDetails.email || "");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [profilePicture, setProfilePicture] = useState(
-    userDetails.profilePicture || ""
+  const [profileImage, setprofileImage] = useState(
+    userDetails.profileImage || ""
   );
   const [showAlert, setShowAlert] = useState(false);
   const [notification, setNotification] = useState({
@@ -32,7 +32,7 @@ const Settings = ({ userDetails }) => {
       const payload = {
         name,
         ...(password && { password }),
-        ...(profilePicture && typeof profilePicture === "string" && profilePicture.startsWith("data:image") && { profilePicture }),
+        ...(profileImage && typeof profileImage === "string" && profileImage.startsWith("data:image") && { profileImage }),
       };
 
       const response = await fetch("/api/user/update", {
@@ -80,12 +80,12 @@ const Settings = ({ userDetails }) => {
     setShowPassword(!showPassword);
   };
 
-  const handleProfilePictureChange = async (e) => {
+  const handleprofileImageChange = async (e) => {
     const file = e.target.files[0];
     if (file) {
       try {
         const base64String = await fileToBase64(file);
-        setProfilePicture(base64String);
+        setprofileImage(base64String);
       } catch (error) {
         setNotification({
           message: "Failed to process profile picture",
@@ -117,7 +117,7 @@ const Settings = ({ userDetails }) => {
         className="flex flex-col justify-start items-start w-full gap-2 max-w-xl"
       >
         <img
-          src={userDetails.profilePicture || "/default-profile.png"}
+          src={userDetails.profileImage || "/default-profile.png"}
           alt="Profile Picture"
           className="w-20 h-20 rounded-full"
         />
@@ -133,7 +133,7 @@ const Settings = ({ userDetails }) => {
               type="file"
               id="file"
               accept="image/jpeg,image/png"
-              onChange={handleProfilePictureChange}
+              onChange={handleprofileImageChange}
               className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
             />
           </div>

@@ -76,7 +76,7 @@ const PlaceView = () => {
           </h2>
 
           <div className="flex flex-col gap-2 w-full">
-            <h3 className="text-xl font-semibold text-zinc-700 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-zinc-700 flex items-center gap-2">
               <Home size={20} className="text-blue-600" /> Property Details
             </h3>
             <p className="text-md text-zinc-700">{place.description}</p>
@@ -92,7 +92,7 @@ const PlaceView = () => {
           </div>
 
           <div className="flex flex-col gap-2 w-full">
-            <h3 className="text-xl font-semibold text-zinc-700 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-zinc-700 flex items-center gap-2">
               <Star size={20} className="text-blue-600" /> Features
             </h3>
             <ul className="list-disc list-inside flex flex-col gap-1">
@@ -105,7 +105,7 @@ const PlaceView = () => {
           </div>
 
           <div className="flex flex-col gap-2 w-full">
-            <h3 className="text-xl font-semibold text-zinc-700 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-zinc-700 flex items-center gap-2">
               <Gavel size={20} className="text-blue-600" /> Rules
             </h3>
             <ul className="list-disc list-inside flex flex-col gap-1">
@@ -118,7 +118,7 @@ const PlaceView = () => {
           </div>
 
           <div className="flex flex-col gap-2 w-full">
-            <h3 className="text-xl font-semibold text-zinc-700 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-zinc-700 flex items-center gap-2">
               <User size={20} className="text-blue-600" /> Owner Information
             </h3>
             <p className="text-md text-zinc-700">Name: {place.ownerName}</p>

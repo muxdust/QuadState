@@ -40,6 +40,8 @@ const DashPage = () => {
   const totalViews = properties.reduce((acc, p) => acc + p.views, 0);
   const totalLikes = properties.reduce((acc, p) => acc + p.likes, 0);
 
+  console.log(userDetails.profileImage);
+
   return (
     <main>
       <div className="flex w-full h-screen">
@@ -50,7 +52,7 @@ const DashPage = () => {
           setActiveComponent={setActiveComponent}
           activeComponent={activeComponent}
         />
-        <div className="flex-1 px-5 py-14 w-full">
+        <div className="flex-1 px-5 py-22 lg:py-12 w-full">
           {activeComponent === "Dashboard" && (
             <Dashboard
               userDetails={userDetails}

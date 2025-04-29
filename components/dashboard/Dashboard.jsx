@@ -11,7 +11,7 @@ const Dashboard = ({
 }) => {
   return (
     <div className="flex flex-col justify-start items-start w-full">
-      <div className="flex flex-col justify-start items-start w-full rounded-lg p-5 bg-gradient-to-br from-blue-500 to-blue-600 mt-12 lg:mt-0">
+      <div className="flex flex-col justify-start items-start w-full rounded-lg p-5 bg-gradient-to-br from-blue-500 to-blue-600">
         <h2 className="text-2xl font-semibold text-white font-heading">
           Welcome back, {userDetails.name}!
         </h2>
@@ -63,7 +63,7 @@ const Dashboard = ({
         </p>
         <div className="flex flex-col justify-start items-start w-full max-w-md rounded-lg p-5 bg-white shadow-md mt-5">
           <img
-            src={userDetails.profilePicture}
+            src={userDetails.profileImage}
             alt="Profile"
             className="w-24 h-24 rounded-full"
           />
