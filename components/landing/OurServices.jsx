@@ -1,21 +1,26 @@
 import React from "react";
-import { Home, CircleDollarSign, TrendingUp } from "lucide-react";
+import { Home, CircleDollarSign, TrendingUp, Settings2 } from "lucide-react";
 
 const services = [
   {
     name: "Buying Properties",
     desc: "Navigate the buying process with expert guidance from our seasoned real estate professionals.",
-    icon: <Home size={40} />,
+    icon: <Home size={36} />,
   },
   {
     name: "Selling Properties",
     desc: "Maximize your property's value with our strategic marketing and negotiation expertise.",
-    icon: <CircleDollarSign size={40} />,
+    icon: <CircleDollarSign size={36} />,
   },
   {
     name: "Investment Advisory",
     desc: "Grow your wealth through strategic real estate investments tailored to your financial goals.",
-    icon: <TrendingUp size={40} />,
+    icon: <TrendingUp size={36} />,
+  },
+  {
+    name: "Property Management",
+    desc: "Comprehensive property management services to ensure your investment is well-maintained and profitable.",
+    icon: <Settings2 size={36} />,
   },
 ];
 
@@ -30,7 +35,7 @@ const OurServices = () => {
           We provide comprehensive real estate services to help you find,
           purchase, or sell your dream property.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-start items-stretch w-full gap-5 mt-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 justify-start items-stretch w-full gap-5 mt-7">
           {services.map((service, index) => (
             <div
               key={index}
