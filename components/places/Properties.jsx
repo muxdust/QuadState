@@ -8,7 +8,6 @@ const Properties = () => {
   const [err, setErr] = useState("");
 
   const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
 
   const fetchPlaces = async () => {
@@ -40,22 +39,7 @@ const Properties = () => {
         location.trim() === "" ||
         place.location.toLowerCase().includes(location.toLowerCase());
 
-      let matchesPrice = true;
-      if (price.trim()) {
-        const match = price.match(/(\d+)\s*-\s*(\d+)/);
-        if (match) {
-          const min = parseInt(match[1], 10);
-          const max = parseInt(match[2], 10);
-          const placePrice = parseInt(
-            String(place.price).replace(/[^\d]/g, ""),
-            10
-          );
-          matchesPrice =
-            !isNaN(placePrice) && placePrice >= min && placePrice <= max;
-        }
-      }
-
-      return matchesName && matchesLocation && matchesPrice;
+      return matchesName && matchesLocation;
     });
   };
 
@@ -87,18 +71,6 @@ const Properties = () => {
                 className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-              />
-            </div>
-            <div className="flex flex-col justify-start items-start w-full gap-2">
-              <h2 className="text-lg text-zinc-800 font-medium font-heading">
-                Price
-              </h2>
-              <input
-                type="text"
-                placeholder="₹ 1000000 - ₹ 100000000"
-                className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
               />
             </div>
             <div className="flex flex-col justify-start items-start w-full gap-2">
