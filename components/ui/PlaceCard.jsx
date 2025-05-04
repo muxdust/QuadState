@@ -15,15 +15,13 @@ const PlaceCard = ({ place }) => {
       </div>
       <div className="flex flex-col justify-between flex-1 w-full p-5 gap-3">
         <div className="flex flex-col gap-2">
-          <div className="flex justify-between items-center w-full">
-            <h2 className="text-xl font-semibold font-heading text-zinc-900">
-              {place.name}
-            </h2>
-            <p className="text-md font-normal text-blue-600 flex items-center gap-1">
-              <MapPin className="inline-block" size={16} />
-              {place.location}
-            </p>
-          </div>
+          <h2 className="text-xl font-semibold font-heading text-zinc-900">
+            {place.name}
+          </h2>
+          <p className="text-md font-normal text-blue-600 flex items-center gap-1">
+            <MapPin className="inline-block" size={16} />
+            {place.location}
+          </p>
           <p className="text-md font-normal text-zinc-700">
             {place.description}
           </p>
@@ -46,7 +44,7 @@ const PlaceCard = ({ place }) => {
         </Link>
       </div>
       <p className="text-sm font-normal absolute top-1 right-1 bg-blue-600 text-white py-1 px-2 rounded-full">
-      ₹ {place.price}
+        ₹ {place.price}
       </p>
     </div>
   );
