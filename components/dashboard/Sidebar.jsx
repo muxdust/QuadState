@@ -69,7 +69,9 @@ const Sidebar = ({
 
   const handleLogout = () => {
     logoutMutation.mutate();
-    router.push("/auth/sign-in");
+    setTimeout(() => {
+      router.push("/auth/sign-in");
+    }, 1000);
   };
 
   const sidebarItems = [
