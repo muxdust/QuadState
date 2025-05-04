@@ -9,16 +9,13 @@ const QuadAi = () => {
   const [floor, setFloor] = useState(0);
   const [condition, setCondition] = useState(0);
   const [grade, setGrade] = useState(0);
-  const [houseArea, setHouseArea] = useState(0);
   const [builtYear, setBuiltYear] = useState(0);
-  const [nearBySchools, setNearBySchools] = useState(0);
-  const [airPortDistance, setAirPortDistance] = useState(0);
 
   const [res, setRes] = useState("");
 
   const { mutate, isLoading } = useMutation({
     mutationFn: async () => {
-      const response = await fetch("/api/quadeai", {
+      const response = await fetch("/api/quadai", {
         method: "POST",
         body: JSON.stringify({
           bedrooms,
@@ -27,10 +24,7 @@ const QuadAi = () => {
           floor,
           condition,
           grade,
-          houseArea,
           builtYear,
-          nearBySchools,
-          airPortDistance,
         }),
       });
       const data = await response.json();
@@ -93,7 +87,7 @@ const QuadAi = () => {
               htmlFor="livingArea"
               className="text-lg font-medium text-zinc-800"
             >
-              Living Area
+              Living Area (sqft)
             </label>
             <input
               type="number"
@@ -125,7 +119,7 @@ const QuadAi = () => {
               htmlFor="condition"
               className="text-lg font-medium text-zinc-800"
             >
-              Condition
+              Condition (1-5)
             </label>
             <input
               type="number"
@@ -141,29 +135,13 @@ const QuadAi = () => {
               htmlFor="grade"
               className="text-lg font-medium text-zinc-800"
             >
-              Grade
+              Grade (1-10)
             </label>
             <input
               type="number"
               id="grade"
               value={grade}
               onChange={(e) => setGrade(e.target.value)}
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
-            />
-          </div>
-
-          <div className="flex flex-col items-start justify-start w-full gap-2">
-            <label
-              htmlFor="houseArea"
-              className="text-lg font-medium text-zinc-800"
-            >
-              House Area
-            </label>
-            <input
-              type="number"
-              id="houseArea"
-              value={houseArea}
-              onChange={(e) => setHouseArea(e.target.value)}
               className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
             />
           </div>
@@ -180,38 +158,6 @@ const QuadAi = () => {
               id="builtYear"
               value={builtYear}
               onChange={(e) => setBuiltYear(e.target.value)}
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
-            />
-          </div>
-
-          <div className="flex flex-col items-start justify-start w-full gap-2">
-            <label
-              htmlFor="nearBySchools"
-              className="text-lg font-medium text-zinc-800"
-            >
-              Near By Schools
-            </label>
-            <input
-              type="number"
-              id="nearBySchools"
-              value={nearBySchools}
-              onChange={(e) => setNearBySchools(e.target.value)}
-              className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
-            />
-          </div>
-
-          <div className="flex flex-col items-start justify-start w-full gap-2">
-            <label
-              htmlFor="airPortDistance"
-              className="text-lg font-medium text-zinc-800"
-            >
-              AirPort Distance
-            </label>
-            <input
-              type="number"
-              id="airPortDistance"
-              value={airPortDistance}
-              onChange={(e) => setAirPortDistance(e.target.value)}
               className="w-full px-4 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
             />
           </div>

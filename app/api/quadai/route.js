@@ -10,10 +10,7 @@ export async function POST(req) {
       floor,
       condition,
       grade,
-      houseArea,
       builtYear,
-      nearBySchools,
-      airPortDistance,
     } = await req.json();
 
     const client = await Client.connect("RagedKrish/house_price");
@@ -25,10 +22,7 @@ export async function POST(req) {
       floors: Number(floor),
       condition: Number(condition),
       grade: Number(grade),
-      house_area: Number(houseArea),
       built_year: Number(builtYear),
-      nearby_schools: Number(nearBySchools),
-      airport_distance: Number(airPortDistance),
     });
 
     console.log(result.data);
