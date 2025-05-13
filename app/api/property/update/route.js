@@ -58,14 +58,14 @@ export async function PATCH(request) {
 
     if (coverImage) {
       const uploadedCoverImage = await uploadImage(coverImage, "properties");
-      updatedData.coverImage = uploadedCoverImage;
+      updatedData.coverImage = uploadedCoverImage.url;
     }
 
     if (otherImages && otherImages.length > 0) {
       const uploadedOtherImages = await Promise.all(
         otherImages.map((img) => uploadImage(img, "properties"))
       );
-      updatedData.otherImages = uploadedOtherImages;
+      updatedData.otherImages = uploadedOtherImages.map((img) => img.url);
     }
 
     if (Object.keys(updatedData).length === 0) {

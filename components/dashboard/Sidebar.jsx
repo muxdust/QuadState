@@ -11,6 +11,7 @@ import {
 import { useRouter } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
 import Alert from "../ui/Alert";
+import Link from "next/link";
 
 const Sidebar = ({
   setActiveComponent,
@@ -90,11 +91,14 @@ const Sidebar = ({
       )}
       <div className="hidden lg:flex flex-col w-64 h-screen sticky top-0 border-r border-zinc-300 bg-white p-5">
         <div className="flex flex-col items-start justify-start gap-3 w-full">
-          <img
+          {/* <img
             src={userProfile}
             alt=""
             className="w-14 h-14 rounded-full object-cover"
-          />
+          /> */}
+          <Link href="/" className="text-2xl font-semibold font-heading text-blue-600">
+            QuadState
+          </Link>
           <div className="flex flex-col gap-1 justify-start items-start w-full">
             <h3 className="text-xl font-semibold text-zinc-800 font-heading">
               {userName}
@@ -129,11 +133,14 @@ const Sidebar = ({
       </div>
       <div className="flex lg:hidden flex-col w-full bg-white px-5 py-3 fixed top-0 z-50 border-b border-zinc-300">
         <div className="flex items-center justify-between w-full">
-          <img
+          {/* <img
             src={userProfile}
             alt=""
             className="w-10 h-10 object-cover rounded-full"
-          />
+          /> */}
+          <Link href="/" className="text-2xl font-semibold font-heading text-blue-600">
+            QuadState
+          </Link>
           <button className="cursor-pointer" onClick={toggleSidebar}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

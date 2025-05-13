@@ -106,7 +106,7 @@ const Properties = ({ userProperties }) => {
 
         <div className="mt-5 w-full overflow-x-auto rounded-xl">
           <table className="min-w-full bg-white border border-zinc-200 rounded-xl">
-            <thead className="bg-gray-50">
+            <thead className="bg-zinc-50">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-bold text-zinc-700 uppercase tracking-wider">
                   Image
@@ -134,9 +134,9 @@ const Properties = ({ userProperties }) => {
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200">
+            <tbody className="divide-y divide-zinc-200">
               {filteredProperties.map((property) => (
-                <tr key={property.id} className="hover:bg-gray-100">
+                <tr key={property.id} className="hover:bg-zinc-100">
                   <td className="px-6 py-4 whitespace-nowrap">
                     <img
                       src={property.coverImage}
@@ -144,22 +144,22 @@ const Properties = ({ userProperties }) => {
                       className="h-10 w-10 rounded-md object-cover"
                     />
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-900">
                     {property.name}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-900">
                     ₹{property.price}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                    {property.area} sq ft
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-900">
+                    {property.propertyArea}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-900">
                     {property.builtYear}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-900">
                     {property.ownerName}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-900">
                     {property.ownerEmail}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap flex items-center gap-4">
