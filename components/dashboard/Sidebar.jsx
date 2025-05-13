@@ -91,14 +91,14 @@ const Sidebar = ({
       )}
       <div className="hidden lg:flex flex-col w-64 h-screen sticky top-0 border-r border-zinc-300 bg-white p-5">
         <div className="flex flex-col items-start justify-start gap-3 w-full">
-          {/* <img
-            src={userProfile}
-            alt=""
-            className="w-14 h-14 rounded-full object-cover"
-          /> */}
           <Link href="/" className="text-2xl font-semibold font-heading text-blue-600">
             QuadState
           </Link>
+          <img
+            src={userProfile}
+            alt=""
+            className="w-14 h-14 rounded-full object-cover mt-5"
+          />
           <div className="flex flex-col gap-1 justify-start items-start w-full">
             <h3 className="text-xl font-semibold text-zinc-800 font-heading">
               {userName}
